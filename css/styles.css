@@ -8,6 +8,10 @@
 
 }
 
+body {
+    margin-bottom: 200px;
+}
+
 a {
     text-decoration: none;
 }
@@ -48,18 +52,132 @@ h1 {
 
 }
 
-/* CSS FLRXBOX */
+/* CSS FLeX BOX */
 
 
 
 .flex {
     display: flex;  /*agora todos ficaram em linha*/  
     flex-wrap: wrap;/*indico que quando nao caber na pagina a imagem va para a proxima linha*/
-    max-width: 1000px;/* colocando o tamanho maximo da imagem*/
+    max-width: 800px;/* colocando o tamanho maximo da imagem*/
     margin: 0 auto ;/* passando dos 800px vai alinhar aut*/
 }
 
 .flex > div { /* aqui estou orientado a div que esta dentro do flex*/
     flex: 1 1 200px;/* quero que se expanda:1  possa fica menor:1  e a base 200px*/ 
     margin: 15px;
+}
+
+/* CSS GRID1 */
+
+.grid1 {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;/* aqui faz com que os elementos se dividem 100 em tres partes*/
+    /* ou posso colocar o item acima como : repeat(3, 1fr); */
+    max-width: 800px;/*defino a largura maxima do espaco ocupado*/
+    padding: 10px;
+    margin: 0 auto;/*0 para cima e baixo e lateral dividindo*/
+    grid-gap: 20px;
+    
+}
+
+.grid1 > div:nth-child(n + 4) {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-gap: 10px;
+    align-items: center;
+
+}
+.grid1 > div.anuncio {
+    grid-column: 1;
+    grid-row: 2 / 5;
+    border-top: 10px solid red;
+    border-bottom: 10px solid blue;
+    display: block;
+    
+}
+
+@media (max-width: 600px) {
+    .grid1 {
+        grid-template-columns: repeat(2, 1fr);
+        
+    }
+
+    .grid1 > div:nth-child(n+4){
+        display: block;
+    }
+
+    .grid1 > div.anuncio{
+        grid-column: auto;
+        grid-row: auto;
+        order: -1;/*modificando a ordem na pagina inicial*/
+    }
+
+}
+
+/* Section Grid 2 */
+
+.grid2 {
+    display: grid;
+    grid-template-columns: 1fr 200px;
+    grid-gap: 20px;
+    max-width: 800px;
+    margin:0 auto;
+    padding: 10px;
+    
+}
+
+.sidebar >div  {
+    margin-bottom: 10px;
+}
+
+@media (max-width:600px){
+    .grid2 {
+        grid-template-columns: 1fr;
+        
+    }
+    .sidebar {
+        display: flex;
+        overflow: scroll;
+    }
+    .sidebar > div {
+        flex: 1 0 200px;
+        margin: 0 10px;
+    }
+}
+
+/* Section GRID3 */
+
+.grid3 {
+    display: grid;
+    grid-template-columns:repeat(2,1fr);
+    grid-gap: 20px;
+    margin: 0 auto;
+    max-width: 800px;
+    padding: 10px;
+
+}
+
+.grid3-item:nth-child(1){
+    grid-row: 1 / 3;
+}
+
+.grid3-item {
+    display: grid;
+}
+
+.grid3-item img {
+    grid-column: 1;
+    grid-row: 1/3;
+    align-self: end;
+
+}
+
+.grid3-item p {
+    background: rgba(0, 0, 0, 0.6);
+    padding: 10px;
+    color: white;
+    grid-column: 1;
+    grid-row: 2;
+    align-self: end;
 }
