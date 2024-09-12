@@ -1,0 +1,65 @@
+* {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    font-size: 1.2rem;
+    font-family: Arial;
+  
+
+}
+
+a {
+    text-decoration: none;
+}
+
+img {
+    max-width: 100%; /*aqui eu quer que minha imagem tenha 100% do seu taanho*/
+    display: block;/*aqui minha imagem vai pegar 100% do display*/
+}
+
+.header {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    padding: 20px;
+    margin: 20px;
+    background-color: aquamarine;
+    align-items: center;
+
+}
+ .menu {
+    display: flex;
+}
+
+.menu li {
+    margin-left: 10px;
+    
+}
+
+.menu li a {
+    display: block;
+    padding: 10px;
+    background-color: tomato;
+}
+
+h1 {
+    text-align: center;
+    margin-top: 100px;
+
+}
+
+/* CSS FLRXBOX */
+
+
+
+.flex {
+    display: flex;  /*agora todos ficaram em linha*/  
+    flex-wrap: wrap;/*indico que quando nao caber na pagina a imagem va para a proxima linha*/
+    max-width: 1000px;/* colocando o tamanho maximo da imagem*/
+    margin: 0 auto ;/* passando dos 800px vai alinhar aut*/
+}
+
+.flex > div { /* aqui estou orientado a div que esta dentro do flex*/
+    flex: 1 1 200px;/* quero que se expanda:1  possa fica menor:1  e a base 200px*/ 
+    margin: 15px;
+}
